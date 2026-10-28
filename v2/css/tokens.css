@@ -1,0 +1,38 @@
+/* TSE v2 — reference-led tokens: black (refs 1–2), ivory editorial (ref 12),
+   violet + gold drawn from the illustrations (refs 3–4) and Tappa's UI (ref 2). */
+:root {
+  --black: #0A090B;
+  --ink: #121014;
+  --ink-2: #19171C;
+  --ink-3: #222027;
+  --line: rgba(255, 255, 255, 0.08);
+
+  --ivory: #F4EDE4;
+  --ivory-2: #ECE2D6;
+  --ivory-3: #E2D6C7;
+
+  --text: #F6F1EA;
+  --text-muted: rgba(246, 241, 234, 0.66);
+  --text-dim: rgba(246, 241, 234, 0.42);
+  --dark: #141216;
+  --dark-muted: rgba(20, 18, 22, 0.68);
+
+  --violet: #7C5CFF;
+  --violet-2: #5F40EC;
+  --violet-soft: #C9BEFF;
+  --gold: #E9B44C;
+  --blush: #F5B6C4;
+  --mint: #9FD8CB;
+
+  --sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --hand: "Kalam", "Segoe Print", cursive;
+
+  --t-lede: clamp(1.02rem, 1.25vw, 1.18rem);
+  --gutter: clamp(16px, 4.4vw, 64px);
+  --maxw: 1240px;
+  --section-y: clamp(96px, 12vw, 168px);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}

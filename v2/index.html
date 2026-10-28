@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TSE — Date-to-marry matchmaking, one introduction at a time</title>
+  <meta name="description" content="The opposite of a swipe app. Date-to-marry matchmaking based on psychological compatibility and lifestyle alignment, with human judgement in every introduction. Every member is ID verified.">
+  <meta name="theme-color" content="#0A090B">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TSE">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="TSE — The opposite of a swipe app">
+  <meta property="og:description" content="Date-to-marry matchmaking, one thoughtful introduction at a time.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/img/red-saree-couple.webp" fetchpriority="high">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Kalam:wght@400;700&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
+  <link rel="stylesheet" href="css/tokens.css?v=1">
+  <link rel="stylesheet" href="css/site.css?v=1">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script type="module" src="js/main.js?v=1"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-down" viewBox="0 0 20 20"><path d="M10 4v11M5 11l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-user" viewBox="0 0 20 20"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 17c1.2-3.2 3.6-4.6 6.5-4.6s5.3 1.4 6.5 4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 20 20"><path d="M4.5 10.5l3.5 3.5 7.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-cross" viewBox="0 0 20 20"><path d="M6 6l8 8M14 6l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 20 20"><path d="M6.2 3.5l2 3.6-1.6 1.4a9 9 0 0 0 4.9 4.9l1.4-1.6 3.6 2-.8 2.8c-6.4.5-12.3-5.4-11.8-11.8z" fill="currentColor"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10 6v4.4l2.8 1.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+      <symbol id="i-file" viewBox="0 0 20 20"><path d="M5 2.5h6.5l3.5 3.5v11.5H5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M11.5 2.5V6H15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+      <symbol id="mark" viewBox="0 0 40 24"><path d="M20 6A10 10 0 0 1 20 18A10 10 0 0 1 20 6Z" fill="#7C5CFF"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="28" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ========== NAV (after reference 1) ========== -->
+  <header class="nav" data-nav>
+    <a class="brand" href="#top" aria-label="TSE home"><svg class="brand__mark" aria-hidden="true"><use href="#mark"/></svg><span>TSE</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#for-you">Who it’s for</a>
+      <a href="https://demo-marchmaker.replit.app/guides">Guides</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="pill pill--light pill--sm nav__signin" href="https://demo-marchmaker.replit.app/sign-in"><svg aria-hidden="true"><use href="#i-user"/></svg>Sign in</a>
+      <a class="pill pill--light pill--sm" href="https://demo-marchmaker.replit.app/sign-up">Begin<span class="nav__long">&nbsp;your journey</span></a>
+    </div>
+    <button class="nav__menu" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
+  </header>
+  <div class="menu" id="menu" hidden>
+    <a href="#how" data-menu-link>How it works</a>
+    <a href="#lab" data-menu-link>How you relate</a>
+    <a href="#for-you" data-menu-link>Who it’s for</a>
+    <a href="https://demo-marchmaker.replit.app/guides">Guides</a>
+    <a href="https://demo-marchmaker.replit.app/sign-in">Sign in</a>
+    <a class="pill pill--light pill--lg" href="https://demo-marchmaker.replit.app/sign-up">Begin your journey</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ========== 1 · HERO (reference 1 composition) ========== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/img/red-saree-couple.webp" alt="" width="736" height="414" fetchpriority="high" data-hero-img>
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__content" data-hero-content>
+        <h1 class="hero__title" id="hero-title"><span>the opposite</span> <span>of a swipe app.</span></h1>
+        <p class="hero__lede">Date-to-marry matchmaking, based on psychological compatibility and lifestyle alignment.</p>
+        <a class="pill pill--light pill--lg" href="https://demo-marchmaker.replit.app/sign-up">Begin your journey <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p class="hero__aside">(one thoughtful introduction at a time)</p>
+      </div>
+    </section>
+
+    <!-- ========== 1b · WHY ========== -->
+    <section class="why" aria-labelledby="why-title">
+      <div class="floaters" aria-hidden="true">
+        <span class="face floater" style="--x:14%;--y:14%;--s:clamp(64px,8vw,112px);--pos:57% 30%;--z:2.1" data-speed="-0.6"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:82%;--y:22%;--s:clamp(54px,6vw,92px);--pos:60% 80%;--z:2.6" data-speed="0.5"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:22%;--y:78%;--s:clamp(50px,5.4vw,84px);--pos:52% 25%;--z:2.4" data-speed="0.9"><img src="assets/img/saree-moon.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:76%;--y:80%;--s:clamp(58px,7vw,104px);--pos:51% 26%;--z:2" data-speed="-0.4"><img src="assets/img/lotus.webp" alt="" loading="lazy"></span>
+      </div>
+      <p class="why__kicker" data-reveal>Why TSE? Because</p>
+      <h2 class="why__title" id="why-title" data-reveal>Swiping isn’t searching.</h2>
+      <p class="why__lede" data-reveal>Finding the right person deserves your <span class="nowrap"><span class="scribble">care<svg viewBox="0 0 120 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 13C30 6 70 5 117 9"/><path pathLength="1" d="M14 18C44 13 80 13 108 15"/></svg></span>,</span> consideration, and a little more thought.</p>
+    </section>
+
+    <!-- ========== 2 · THE NOISE (reference 2: phones + floating components) ========== -->
+    <section class="noise" id="noise" aria-labelledby="noise-title">
+      <header class="noise__head">
+        <h2 id="noise-title" data-reveal>Somewhere between “hey?” and “Beta,&nbsp;just&nbsp;meet&nbsp;once.”</h2>
+        <p data-reveal>There is directionless dating on one side, and family pressure to marry on a schedule on the other.</p>
+      </header>
+
+      <div class="stage">
+        <div class="duo duo--a" data-duo>
+          <p class="duo__label">Directionless dating</p>
+          <div class="phone" role="group" aria-label="Directionless dating: a conversation that fades away">
+            <div class="phone__screen">
+              <div class="phone__status" aria-hidden="true"><span>9:41</span><i></i><span class="phone__sig"></span></div>
+              <div class="phone__bar"><span class="av av--ghost" aria-hidden="true"></span><div><b>Someone you matched with</b><small>last seen 3 days ago</small></div></div>
+              <ol class="thread">
+                <li class="day">Monday</li>
+                <li class="msg msg--them"><span class="sr-only">They said: </span>hey, nice profile! how’s it going?<time>10:42</time></li>
+                <li class="msg msg--you"><span class="sr-only">You said: </span>haha thanks, i’m good. wbu?<time>10:44</time></li>
+                <li class="msg msg--them"><span class="sr-only">They said: </span>same. what do you do on weekends?<time>10:46</time></li>
+                <li class="msg msg--you"><span class="sr-only">You said: </span>mostly music and long drives. you?<time>10:47</time></li>
+                <li class="msg msg--you"><span class="sr-only">You said: </span>we should grab a coffee sometime?<time>10:52</time></li>
+                <li class="day">Yesterday</li>
+                <li class="msg msg--you"><span class="sr-only">You said: </span>hey, still on for that coffee?<time>9:18 pm</time></li>
+                <li class="day">Today</li>
+                <li class="msg msg--you"><span class="sr-only">You said: </span>hey, there?<time>8:04 am</time></li>
+                <li class="msg msg--you"><span class="sr-only">You said: </span>hey?<time>8:41 am</time></li>
+                <li class="status">Delivered</li>
+              </ol>
+            </div>
+          </div>
+          <div class="comp comp--seen" aria-hidden="true" data-speed="-0.5"><svg><use href="#i-clock"/></svg>last seen 3 days ago</div>
+          <div class="comp comp--card comp--you" aria-hidden="true" data-speed="0.35"><span class="av av--ghost"></span><div><b>You</b><span>hey, still on for that coffee?</span></div></div>
+          <div class="comp comp--blush" aria-hidden="true" data-speed="-0.25"><svg><use href="#i-check"/></svg>Delivered</div>
+        </div>
+
+        <div class="duo duo--b" data-duo>
+          <p class="duo__label">Marriage on a schedule</p>
+          <div class="phone" role="group" aria-label="Marriage on a schedule: Kabir's family group chat">
+            <div class="phone__screen">
+              <div class="phone__status" aria-hidden="true"><span>9:41</span><i></i><span class="phone__sig"></span></div>
+              <div class="phone__bar"><span class="av av--group" aria-hidden="true">F</span><div><b>Family</b><small>Papa, Mom, Bua, Chachu, you</small></div></div>
+              <ol class="thread">
+                <li class="day">Yesterday</li>
+                <li class="msg msg--them msg--g"><span class="av av--sm av--papa" aria-hidden="true">P</span><b class="who who--papa">Papa</b>Beta, we met the Sharmas today<time>8:12 pm</time></li>
+                <li class="msg msg--them msg--g"><span class="av av--sm av--mom" aria-hidden="true">M</span><b class="who who--mom">Mom</b><span class="file"><svg aria-hidden="true"><use href="#i-file"/></svg>Bio-data.pdf</span>Here’s the bio-data<time>8:14 pm</time></li>
+                <li class="msg msg--them msg--g"><span class="av av--sm av--bua" aria-hidden="true">B</span><b class="who who--bua">Bua</b>They’re from Pune, earning well also<time>8:31 pm</time></li>
+                <li class="msg msg--them msg--g"><span class="av av--sm av--mom" aria-hidden="true">M</span><b class="who who--mom">Mom</b>Just meet once, no pressure<time>10:06 pm</time></li>
+                <li class="day">Today</li>
+                <li class="msg msg--them msg--g"><span class="av av--sm av--papa" aria-hidden="true">P</span><b class="who who--papa">Papa</b>Everyone your age is settling down<time>7:02 am</time></li>
+                <li class="msg msg--them msg--g"><span class="av av--sm av--bua" aria-hidden="true">B</span><b class="who who--bua">Bua</b>Don’t say no without meeting<time>9:15 am</time></li>
+                <li class="msg msg--them msg--g"><span class="av av--sm av--mom" aria-hidden="true">M</span><b class="who who--mom">Mom</b>Beta?<time>9:47 am</time></li>
+              </ol>
+            </div>
+          </div>
+          <div class="comp comp--pill comp--family" aria-hidden="true" data-speed="-0.45"><span class="av av--group av--sm">F</span>Family<span class="badge">7</span></div>
+          <div class="comp comp--card comp--bua" aria-hidden="true" data-speed="0.3"><span class="av av--bua">B</span><div><b>Bua</b><span>Don’t say no without meeting</span></div></div>
+          <div class="comp comp--dark comp--file" aria-hidden="true" data-speed="-0.2"><span class="comp__icon"><svg><use href="#i-file"/></svg></span><div><b>Bio-data.pdf</b><span>from Mom · 8:14 pm</span></div></div>
+        </div>
+      </div>
+
+      <p class="noise__bridge" data-reveal>We exist in the <em>considered space</em> between them.</p>
+    </section>
+
+    <!-- ========== 3 · THE CONSIDERED MIDDLE (reference 2: editorial section) ========== -->
+    <section class="middle" id="middle" aria-labelledby="middle-title">
+      <div class="wrap middle__grid">
+        <div class="middle__copy">
+          <p class="eyebrow" data-reveal>The considered middle</p>
+          <h2 id="middle-title" data-reveal>The considered middle is the sweet&nbsp;spot.</h2>
+          <p data-reveal>No endless swiping. No rushing. One right person, at a pace that is yours.</p>
+          <a class="pill pill--light" href="#how" data-reveal>See how it works <svg aria-hidden="true"><use href="#i-down"/></svg></a>
+        </div>
+        <figure class="frame middle__img middle__img--a" data-speed="0.25"><img src="assets/img/what-eyes.webp" alt="Two illustrated panels: a woman, chin in hand, smiles at a man who smiles back the same way." width="736" height="981" loading="lazy"></figure>
+        <figure class="frame middle__img middle__img--b" data-speed="-0.2"><img src="assets/img/sunset-glance.webp" alt="Illustration at golden hour: a woman turns to look at a man beside her." width="735" height="490" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- ========== 4 · HOW YOU RELATE (lab components, quieter) ========== -->
+    <section class="lab" id="lab" aria-labelledby="lab-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="eyebrow eyebrow--dark" data-reveal>How you relate</p>
+          <h2 class="serif-h" id="lab-title" data-reveal>Understanding how you relate to people <em>matters.</em></h2>
+          <p class="lede" data-reveal>How you get close to someone, how you handle a difficult conversation, what you reach for when things get hard. These patterns shape a relationship long before anyone talks about compatibility, and knowing yours makes it clearer what kind of partner, and what kind of partnership, would genuinely suit you.</p>
+        </header>
+
+        <div class="lab__stage">
+          <figure class="frame lab__portrait"><img src="assets/img/lotus.webp" alt="Illustration: a woman in a dark green saree holds a pink lotus close, lost in thought." width="736" height="1041" loading="lazy"></figure>
+
+          <fieldset class="lcard lcard--relate" data-lab="relate">
+            <legend class="lcard__title"><span class="lcard__n">01</span>How you relate</legend>
+            <p class="lcard__q">When things get hard, you reach for…</p>
+            <div class="seg">
+              <label><input type="radio" name="reach" value="your people"><span>Your people</span></label>
+              <label><input type="radio" name="reach" value="some quiet and space"><span>Some space</span></label>
+              <label><input type="radio" name="reach" value="a plan"><span>A plan</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="lcard lcard--value" data-lab="value">
+            <legend class="lcard__title"><span class="lcard__n">02</span>What you value</legend>
+            <p class="lcard__q">Pick up to three.</p>
+            <div class="tags">
+              <label><input type="checkbox" value="family"><span>Family</span></label>
+              <label><input type="checkbox" value="kindness"><span>Kindness</span></label>
+              <label><input type="checkbox" value="ambition"><span>Ambition</span></label>
+              <label><input type="checkbox" value="faith"><span>Faith</span></label>
+              <label><input type="checkbox" value="humour"><span>Humour</span></label>
+              <label><input type="checkbox" value="independence"><span>Independence</span></label>
+            </div>
+          </fieldset>
+
+          <div class="lcard lcard--life" role="group" aria-labelledby="life-title" data-lab="life">
+            <p class="lcard__title" id="life-title"><span class="lcard__n">03</span>The life you want</p>
+            <div class="toggle-row"><span id="t-family">Living close to family</span><button class="toggle" type="button" role="switch" aria-checked="false" aria-labelledby="t-family" data-life="family"><i></i></button></div>
+            <div class="toggle-row"><span id="t-quiet">Quiet weekends</span><button class="toggle" type="button" role="switch" aria-checked="false" aria-labelledby="t-quiet" data-life="quiet"><i></i></button></div>
+            <div class="toggle-row"><span id="t-routine">A steady routine</span><button class="toggle" type="button" role="switch" aria-checked="false" aria-labelledby="t-routine" data-life="routine"><i></i></button></div>
+          </div>
+
+          <div class="lcard lcard--note">
+            <p class="lcard__title">Your sketch</p>
+            <p class="lcard__body" data-sketch aria-live="polite">Answer a prompt and a first sketch of you appears here.</p>
+            <p class="lcard__fine">A sketch, not a score.</p>
+          </div>
+        </div>
+
+        <div class="lab__foot">
+          <p class="lab__fine">Sample prompts, to show the kind of thinking involved. The real guided questionnaire goes much deeper. Nothing you choose here is saved or sent.</p>
+          <a class="pill pill--dark" href="https://demo-marchmaker.replit.app/sign-up">Take the guided questionnaire <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="lab__along" data-reveal>It is only ever read alongside the ordinary things that decide how life together feels: <em>what you value, how you want to spend your days, and the future you are building toward.</em></p>
+      </div>
+    </section>
+
+    <!-- ========== 5 · HOW IT WORKS (reference 12: editorial row) ========== -->
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <header class="how__head">
+          <h2 class="serif-h" id="how-title" data-reveal>How it <em>works</em></h2>
+          <p class="lede" data-reveal>Understood first. Introduced second. With human judgement in every introduction, not just AI.</p>
+          <svg class="doodle doodle--sign" viewBox="0 0 180 150" aria-hidden="true">
+            <rect x="18" y="10" width="144" height="74" rx="4" fill="none" stroke="#141216" stroke-width="2.2" stroke-linejoin="round" transform="rotate(-3 90 47)"/>
+            <path d="M88 84l-3 60" fill="none" stroke="#141216" stroke-width="2.2" stroke-linecap="round"/>
+            <text x="90" y="44" text-anchor="middle" font-family="Kalam, cursive" font-size="21" font-weight="700" fill="#141216" transform="rotate(-3 90 47)">one person.</text>
+            <text x="90" y="68" text-anchor="middle" font-family="Kalam, cursive" font-size="21" fill="#141216" transform="rotate(-3 90 47)">at a time.</text>
+          </svg>
+        </header>
+
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <div class="mock" aria-hidden="true">
+              <p class="mock__kicker">Guided questionnaire</p>
+              <span class="mock__bar"><i style="width:58%"></i></span>
+              <p class="mock__q">How do you handle a difficult conversation?</p>
+              <span class="mock__opt">Talk it out right away</span>
+              <span class="mock__opt is-on">Take a little time first</span>
+              <span class="mock__opt">Write it down first</span>
+            </div>
+            <p class="step__n">Step 01</p>
+            <h3>Get to know yourself</h3>
+            <p>Through an in-depth guided questionnaire, you get clarity on your choices, patterns and what matters to you in a partner.</p>
+          </li>
+          <li class="step" data-reveal>
+            <div class="mock" aria-hidden="true">
+              <p class="mock__kicker">Your introduction</p>
+              <span class="face mock__portrait" style="--pos:60% 80%;--z:1.9"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span>
+              <p class="mock__sub">Hand-picked for you, one at a time</p>
+              <span class="mock__tick"><svg><use href="#i-check"/></svg>How you relate</span>
+              <span class="mock__tick"><svg><use href="#i-check"/></svg>What you value</span>
+              <span class="mock__tick"><svg><use href="#i-check"/></svg>The life you want</span>
+            </div>
+            <p class="step__n">Step 02</p>
+            <h3>We make a thoughtful introduction</h3>
+            <p>Using psychological compatibility and lifestyle alignment, we hand-pick one person for you and introduce you.</p>
+          </li>
+          <li class="step" data-reveal>
+            <div class="mock" aria-hidden="true">
+              <p class="mock__kicker">Both said yes</p>
+              <div class="mock__pair">
+                <span class="face" style="--pos:57% 30%;--z:2.1"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
+                <span class="mock__yes">Yes</span>
+                <span class="mock__yes">Yes</span>
+                <span class="face" style="--pos:60% 80%;--z:2.4"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span>
+              </div>
+              <span class="mock__call"><svg><use href="#i-phone"/></svg>A call first<span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+              <p class="mock__sub">Video when you’re ready</p>
+            </div>
+            <p class="step__n">Step 03</p>
+            <h3>Take it beyond the chat</h3>
+            <p>You see a preview of their profile first. If you both say yes, we help you move it to a real conversation and give it a fair shot.</p>
+          </li>
+          <li class="step" data-reveal>
+            <div class="mock" aria-hidden="true">
+              <p class="mock__kicker">How did it feel?</p>
+              <span class="mock__bubble">It didn’t quite click. It felt a little rushed.</span>
+              <span class="mock__bubble mock__bubble--us">Thank you for telling us. Want to talk it through?</span>
+              <p class="mock__sub mock__sub--loop">↻ Shapes your next introduction</p>
+            </div>
+            <p class="step__n">Step 04</p>
+            <h3>If it doesn’t click, we listen</h3>
+            <p>Tell us how it felt, and talk it through with us if you want to understand why, so the next introduction is shaped by it.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== 6 · THE DIFFERENCE ========== -->
+    <section class="diff" id="difference" aria-labelledby="diff-title">
+      <div class="wrap">
+        <h2 id="diff-title" data-reveal>Same hope. <em>A very different way</em> to get there.</h2>
+        <table class="compare">
+          <caption class="sr-only">How dating usually works, compared with how TSE does it</caption>
+          <thead><tr><th scope="col">How it usually works</th><th scope="col">How we do it</th></tr></thead>
+          <tbody>
+            <tr data-row><td><span>Swipe in three seconds</span></td><td><svg aria-hidden="true"><use href="#i-check"/></svg>Matched on psychology and values</td></tr>
+            <tr data-row><td><span>Chat with no context</span></td><td><svg aria-hidden="true"><use href="#i-check"/></svg>A call first, video when ready</td></tr>
+            <tr data-row><td><span>Many conversations at once</span></td><td><svg aria-hidden="true"><use href="#i-check"/></svg>One introduction at a time</td></tr>
+            <tr data-row><td><span>Go in knowing nothing</span></td><td><svg aria-hidden="true"><use href="#i-check"/></svg>You both know a little already</td></tr>
+            <tr data-row><td><span>Anyone can make a profile</span></td><td><svg aria-hidden="true"><use href="#i-check"/></svg>Every member is ID verified</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== 7 · GROUND RULES (reference 2: component language) ========== -->
+    <section class="trust" id="trust" aria-labelledby="trust-title">
+      <div class="wrap">
+        <header class="sec-head sec-head--dark">
+          <p class="eyebrow" data-reveal>Ground rules</p>
+          <h2 id="trust-title" data-reveal>Dating is personal. <em>So are the rules.</em></h2>
+          <p class="lede" data-reveal>Six rules shape every introduction, so the person in front of you is real, considered, and there for the same reason you are.</p>
+        </header>
+        <ul class="bento">
+          <li class="tile tile--wide" data-reveal>
+            <div class="tile__viz" aria-hidden="true">
+              <span class="ui-row"><span class="ui-ic"><svg><use href="#i-user"/></svg></span>ID verification<span class="toggle is-on" data-auto-toggle><i></i></span></span>
+              <span class="ui-chip ui-chip--ok"><svg><use href="#i-check"/></svg>Verified member</span>
+            </div>
+            <h3>Every member is ID verified.</h3>
+            <p>Anyone can make a profile on a swipe app. Here, every member is ID verified.</p>
+          </li>
+          <li class="tile" data-reveal>
+            <div class="tile__viz" aria-hidden="true">
+              <span class="stack"><span class="face is-dim" style="--pos:52% 25%;--z:2.4"><img src="assets/img/saree-moon.webp" alt="" loading="lazy"></span><span class="face is-on" style="--pos:60% 80%;--z:2.4"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span><span class="face is-dim" style="--pos:51% 26%;--z:2"><img src="assets/img/lotus.webp" alt="" loading="lazy"></span></span>
+            </div>
+            <h3>One introduction at a time.</h3>
+            <p>No crowd to compare against and no juggling chats. One person gets your full attention.</p>
+          </li>
+          <li class="tile" data-reveal>
+            <div class="tile__viz" aria-hidden="true"><span class="ui-chip ui-chip--violet">You · Yes</span><span class="ui-chip ui-chip--violet">Them · Yes</span></div>
+            <h3>Nothing moves without both of you.</h3>
+            <p>You see a preview of their profile first. It only becomes a conversation if you both say yes.</p>
+          </li>
+          <li class="tile tile--wide" data-reveal>
+            <div class="tile__viz" aria-hidden="true">
+              <span class="ui-voice"><span class="ui-voice__btn"><svg><use href="#i-phone"/></svg></span><span class="wave wave--lg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ui-voice__t">Call</span></span>
+            </div>
+            <h3>A no-texting policy.</h3>
+            <p>Texting is where conversations lose momentum and fade away. Here, it’s a call first, and video when you’re ready.</p>
+          </li>
+          <li class="tile tile--wide" data-reveal>
+            <div class="tile__viz" aria-hidden="true"><span class="ui-chip">Human judgement</span><span class="ui-plus">+</span><span class="ui-chip ui-chip--ghost">AI</span></div>
+            <h3>Human judgement in every introduction.</h3>
+            <p>Not just AI. Your psychology, attachment patterns, values and lifestyle are considered before anyone is introduced.</p>
+          </li>
+          <li class="tile" data-reveal>
+            <div class="tile__viz" aria-hidden="true"><span class="ui-bubble">Tell us how it felt.</span></div>
+            <h3>If it doesn’t click, we listen.</h3>
+            <p>Talk it through if you want to. The next introduction is shaped by it.</p>
+          </li>
+        </ul>
+        <p class="trust__links">Before you begin, read our <a href="https://demo-marchmaker.replit.app/privacy">Privacy Policy</a> and <a href="https://demo-marchmaker.replit.app/terms">Terms &amp; Conditions</a>.</p>
+      </div>
+    </section>
+
+    <!-- ========== 8 · WHO IT'S FOR (reference 12: editorial + doodle) ========== -->
+    <section class="fit" id="for-you" aria-labelledby="fit-title">
+      <div class="wrap fit__grid">
+        <figure class="fit__art">
+          <span class="frame"><img src="assets/img/saree-moon.webp" alt="Illustration: a woman in a navy and gold saree and dark sunglasses stands, hands on hips, before a white moon." width="736" height="1307" loading="lazy"></span>
+          <figcaption class="doodle-cap" aria-hidden="true">
+            <svg viewBox="0 0 120 60"><path d="M8 50C30 46 70 30 104 8" fill="none" stroke="#141216" stroke-width="2.2" stroke-linecap="round"/><path d="M90 8l15-1-5 14" fill="none" stroke="#141216" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>date with intention.</span>
+          </figcaption>
+        </figure>
+        <div class="fit__copy">
+          <p class="eyebrow eyebrow--dark" data-reveal>Who it’s for</p>
+          <h2 class="serif-h" id="fit-title" data-reveal>Let’s be honest about <em>who this is for.</em></h2>
+          <p class="lede" data-reveal>We don’t want more crowd. We want the right crowd.</p>
+          <div class="fit__lists">
+            <div data-reveal>
+              <h3>This is for you if</h3>
+              <ul class="ticks">
+                <li>You want to find a life partner, but don’t want to be rushed into getting married just because “it’s time”.</li>
+                <li>You are willing to put in the real time and effort the process requires, rather than simply dating to pass time.</li>
+                <li>You want to date with the intention of marriage, and believe in monogamy.</li>
+                <li>You are open to genuinely giving this process an honest chance.</li>
+              </ul>
+            </div>
+            <div data-reveal>
+              <h3>This isn’t for you if</h3>
+              <ul class="ticks ticks--no">
+                <li>You are looking to keep things casual and see where they go.</li>
+                <li>You tend to ghost people, because you like having multiple options and conversations going at the same time.</li>
+                <li>You are looking for validation, instant chemistry, or something to pass the time.</li>
+                <li>You would rather browse through profiles than take the time to genuinely get to know a person.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="fit__now"><span>Right now</span>We serve a small crowd: 26 to 34 year olds, heterosexual cis men and women, never married. We hope to open this up to many more people soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 9 · A NOTE (emotional payoff) ========== -->
+    <section class="note" id="note" aria-labelledby="note-title">
+      <div class="wrap">
+        <p class="eyebrow" id="note-title" data-reveal>A note from the founder</p>
+        <blockquote class="note__quote" data-reveal><p>“I believe your person is out there, and that meeting them is worth <em>a little intention.</em>”</p></blockquote>
+        <figure class="frame note__art" data-note-art><img src="assets/img/cheek-on-hand.webp" alt="Illustration: a woman rests her cheek on her hand and smiles at a man who looks back at her." width="736" height="414" loading="lazy"></figure>
+        <div class="note__foot" data-reveal>
+          <p>Go at your own pace, and let it unfold the way it should.</p>
+          <p class="note__sig">— The founder, TSE</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 10 · BEGIN (reference 1 ending) ========== -->
+    <section class="final" id="begin" aria-labelledby="final-title">
+      <div class="floaters" aria-hidden="true">
+        <span class="face floater" style="--x:10%;--y:24%;--s:clamp(56px,6.5vw,96px);--pos:57% 30%;--z:2.1" data-speed="-0.5"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:88%;--y:30%;--s:clamp(50px,5.5vw,84px);--pos:32% 18%;--z:2.6" data-speed="0.6"><img src="assets/img/first-glance-comic.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:84%;--y:82%;--s:clamp(54px,6vw,92px);--pos:51% 84%;--z:2.6" data-speed="-0.3"><img src="assets/img/first-glance-comic.webp" alt="" loading="lazy"></span>
+      </div>
+      <div class="wrap final__inner">
+        <h2 class="final__title" id="final-title" data-reveal>The best time to understand yourself was before your last relationship. <em>The second best time is now.</em></h2>
+        <a class="pill pill--light pill--xl" href="https://demo-marchmaker.replit.app/sign-up" data-reveal>Begin your journey <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <p class="final__alt" data-reveal>Not ready yet? <a href="https://demo-marchmaker.replit.app/guides">Read our relationship guides</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="TSE, back to top"><svg class="brand__mark" aria-hidden="true"><use href="#mark"/></svg><span>TSE</span></a>
+        <p>Date-to-marry matchmaking, one introduction at a time.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div><p class="eyebrow">Start</p><a href="https://demo-marchmaker.replit.app/sign-up">Begin your journey</a><a href="https://demo-marchmaker.replit.app/sign-in">Sign in</a><a href="https://demo-marchmaker.replit.app/guides">Relationship guides</a></div>
+        <div><p class="eyebrow">Company</p><a href="https://demo-marchmaker.replit.app/about">About us</a><a href="https://demo-marchmaker.replit.app/contact">Contact us</a><a href="https://demo-marchmaker.replit.app/help">Help &amp; FAQ</a></div>
+        <div><p class="eyebrow">Legal</p><a href="https://demo-marchmaker.replit.app/terms">Terms &amp; Conditions</a><a href="https://demo-marchmaker.replit.app/privacy">Privacy Policy</a><a href="https://demo-marchmaker.replit.app/legal">Legal Notices</a></div>
+      </nav>
+      <p class="footer__fine">© 2026 TSE. Currently serving 26–34 year olds, heterosexual cis men and women, never married. Illustrations in this concept are placeholders pending licensing.</p>
+    </div>
+  </footer>
+</body>
+</html>
