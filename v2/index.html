@@ -18,12 +18,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Kalam:wght@400;700&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
-  <link rel="stylesheet" href="css/tokens.css?v=1">
-  <link rel="stylesheet" href="css/site.css?v=1">
+  <link rel="stylesheet" href="css/tokens.css?v=2">
+  <link rel="stylesheet" href="css/site.css?v=2">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script type="module" src="js/main.js?v=1"></script>
+  <script type="module" src="js/main.js?v=2"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -52,9 +52,10 @@
     </nav>
     <div class="nav__actions">
       <a class="pill pill--light pill--sm nav__signin" href="https://demo-marchmaker.replit.app/sign-in"><svg aria-hidden="true"><use href="#i-user"/></svg>Sign in</a>
-      <a class="pill pill--light pill--sm" href="https://demo-marchmaker.replit.app/sign-up">Begin<span class="nav__long">&nbsp;your journey</span></a>
+      <a class="pill pill--light pill--sm" href="https://demo-marchmaker.replit.app/sign-up"><span>Begin<span class="nav__long">&nbsp;your journey</span></span></a>
     </div>
     <button class="nav__menu" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>Menu</button>
+    <span class="nav__progress" aria-hidden="true"></span>
   </header>
   <div class="menu" id="menu" hidden>
     <a href="#how" data-menu-link>How it works</a>
@@ -73,6 +74,12 @@
         <img src="assets/img/red-saree-couple.webp" alt="" width="736" height="414" fetchpriority="high" data-hero-img>
       </div>
       <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__float" aria-hidden="true">
+        <span class="face floater" style="--x:11%;--y:32%;--s:clamp(58px,6.4vw,96px);--pos:57% 30%;--z:2.1" data-move data-drag data-depth="1.3"><img src="assets/img/violet-flower.webp" alt=""></span>
+        <span class="face floater" style="--x:89%;--y:68%;--s:clamp(54px,6vw,90px);--pos:52% 25%;--z:2.4" data-move data-drag data-depth="1.7"><img src="assets/img/saree-moon.webp" alt=""></span>
+        <span class="floater chip-float" style="--x:15%;--y:74%" data-move data-drag data-depth="0.9"><svg><use href="#i-check"/></svg>Every member ID verified</span>
+        <span class="floater chip-float chip-float--violet" style="--x:85%;--y:27%" data-move data-drag data-depth="1.5">One introduction at a time</span>
+      </div>
       <div class="hero__content" data-hero-content>
         <h1 class="hero__title" id="hero-title"><span>the opposite</span> <span>of a swipe app.</span></h1>
         <p class="hero__lede">Date-to-marry matchmaking, based on psychological compatibility and lifestyle alignment.</p>
@@ -84,10 +91,10 @@
     <!-- ========== 1b · WHY ========== -->
     <section class="why" aria-labelledby="why-title">
       <div class="floaters" aria-hidden="true">
-        <span class="face floater" style="--x:14%;--y:14%;--s:clamp(64px,8vw,112px);--pos:57% 30%;--z:2.1" data-speed="-0.6"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
-        <span class="face floater" style="--x:82%;--y:22%;--s:clamp(54px,6vw,92px);--pos:60% 80%;--z:2.6" data-speed="0.5"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span>
-        <span class="face floater" style="--x:22%;--y:78%;--s:clamp(50px,5.4vw,84px);--pos:52% 25%;--z:2.4" data-speed="0.9"><img src="assets/img/saree-moon.webp" alt="" loading="lazy"></span>
-        <span class="face floater" style="--x:76%;--y:80%;--s:clamp(58px,7vw,104px);--pos:51% 26%;--z:2" data-speed="-0.4"><img src="assets/img/lotus.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:14%;--y:14%;--s:clamp(64px,8vw,112px);--pos:57% 30%;--z:2.1" data-speed="-0.6" data-move data-drag data-depth="1.6"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:82%;--y:22%;--s:clamp(54px,6vw,92px);--pos:60% 80%;--z:2.6" data-speed="0.5" data-move data-drag data-depth="1.4"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:22%;--y:78%;--s:clamp(50px,5.4vw,84px);--pos:52% 25%;--z:2.4" data-speed="0.9" data-move data-drag data-depth="2.0"><img src="assets/img/saree-moon.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:76%;--y:80%;--s:clamp(58px,7vw,104px);--pos:51% 26%;--z:2" data-speed="-0.4" data-move data-drag data-depth="1.2"><img src="assets/img/lotus.webp" alt="" loading="lazy"></span>
       </div>
       <p class="why__kicker" data-reveal>Why TSE? Because</p>
       <h2 class="why__title" id="why-title" data-reveal>Swiping isn’t searching.</h2>
@@ -102,9 +109,10 @@
       </header>
 
       <div class="stage">
-        <div class="duo duo--a" data-duo>
+        <p class="drag-hint" aria-hidden="true">psst… these move. drag them around.</p>
+        <div class="duo duo--a" data-duo data-reveal>
           <p class="duo__label">Directionless dating</p>
-          <div class="phone" role="group" aria-label="Directionless dating: a conversation that fades away">
+          <div class="phone" data-tilt="8" role="group" aria-label="Directionless dating: a conversation that fades away">
             <div class="phone__screen">
               <div class="phone__status" aria-hidden="true"><span>9:41</span><i></i><span class="phone__sig"></span></div>
               <div class="phone__bar"><span class="av av--ghost" aria-hidden="true"></span><div><b>Someone you matched with</b><small>last seen 3 days ago</small></div></div>
@@ -124,14 +132,14 @@
               </ol>
             </div>
           </div>
-          <div class="comp comp--seen" aria-hidden="true" data-speed="-0.5"><svg><use href="#i-clock"/></svg>last seen 3 days ago</div>
-          <div class="comp comp--card comp--you" aria-hidden="true" data-speed="0.35"><span class="av av--ghost"></span><div><b>You</b><span>hey, still on for that coffee?</span></div></div>
-          <div class="comp comp--blush" aria-hidden="true" data-speed="-0.25"><svg><use href="#i-check"/></svg>Delivered</div>
+          <div class="comp comp--seen" aria-hidden="true" data-speed="-0.5" data-move data-drag data-depth="1.5"><svg><use href="#i-clock"/></svg>last seen 3 days ago</div>
+          <div class="comp comp--card comp--you" aria-hidden="true" data-speed="0.35" data-move data-drag data-depth="1.2"><span class="av av--ghost"></span><div><b>You</b><span>hey, still on for that coffee?</span></div></div>
+          <div class="comp comp--blush" aria-hidden="true" data-speed="-0.25" data-move data-drag data-depth="1.0"><svg><use href="#i-check"/></svg>Delivered</div>
         </div>
 
-        <div class="duo duo--b" data-duo>
+        <div class="duo duo--b" data-duo data-reveal>
           <p class="duo__label">Marriage on a schedule</p>
-          <div class="phone" role="group" aria-label="Marriage on a schedule: Kabir's family group chat">
+          <div class="phone" data-tilt="8" role="group" aria-label="Marriage on a schedule: Kabir's family group chat">
             <div class="phone__screen">
               <div class="phone__status" aria-hidden="true"><span>9:41</span><i></i><span class="phone__sig"></span></div>
               <div class="phone__bar"><span class="av av--group" aria-hidden="true">F</span><div><b>Family</b><small>Papa, Mom, Bua, Chachu, you</small></div></div>
@@ -148,9 +156,9 @@
               </ol>
             </div>
           </div>
-          <div class="comp comp--pill comp--family" aria-hidden="true" data-speed="-0.45"><span class="av av--group av--sm">F</span>Family<span class="badge">7</span></div>
-          <div class="comp comp--card comp--bua" aria-hidden="true" data-speed="0.3"><span class="av av--bua">B</span><div><b>Bua</b><span>Don’t say no without meeting</span></div></div>
-          <div class="comp comp--dark comp--file" aria-hidden="true" data-speed="-0.2"><span class="comp__icon"><svg><use href="#i-file"/></svg></span><div><b>Bio-data.pdf</b><span>from Mom · 8:14 pm</span></div></div>
+          <div class="comp comp--pill comp--family" aria-hidden="true" data-speed="-0.45" data-move data-drag data-depth="1.4"><span class="av av--group av--sm">F</span>Family<span class="badge">7</span></div>
+          <div class="comp comp--card comp--bua" aria-hidden="true" data-speed="0.3" data-move data-drag data-depth="1.1"><span class="av av--bua">B</span><div><b>Bua</b><span>Don’t say no without meeting</span></div></div>
+          <div class="comp comp--dark comp--file" aria-hidden="true" data-speed="-0.2" data-move data-drag data-depth="0.9"><span class="comp__icon"><svg><use href="#i-file"/></svg></span><div><b>Bio-data.pdf</b><span>from Mom · 8:14 pm</span></div></div>
         </div>
       </div>
 
@@ -166,8 +174,8 @@
           <p data-reveal>No endless swiping. No rushing. One right person, at a pace that is yours.</p>
           <a class="pill pill--light" href="#how" data-reveal>See how it works <svg aria-hidden="true"><use href="#i-down"/></svg></a>
         </div>
-        <figure class="frame middle__img middle__img--a" data-speed="0.25"><img src="assets/img/what-eyes.webp" alt="Two illustrated panels: a woman, chin in hand, smiles at a man who smiles back the same way." width="736" height="981" loading="lazy"></figure>
-        <figure class="frame middle__img middle__img--b" data-speed="-0.2"><img src="assets/img/sunset-glance.webp" alt="Illustration at golden hour: a woman turns to look at a man beside her." width="735" height="490" loading="lazy"></figure>
+        <figure class="frame middle__img middle__img--a" data-speed="0.25" data-move data-depth="0.5" data-reveal><img src="assets/img/what-eyes.webp" alt="Two illustrated panels: a woman, chin in hand, smiles at a man who smiles back the same way." width="736" height="981" loading="lazy"></figure>
+        <figure class="frame middle__img middle__img--b" data-speed="-0.2" data-move data-depth="0.5" data-reveal><img src="assets/img/sunset-glance.webp" alt="Illustration at golden hour: a woman turns to look at a man beside her." width="735" height="490" loading="lazy"></figure>
       </div>
     </section>
 
@@ -181,9 +189,9 @@
         </header>
 
         <div class="lab__stage">
-          <figure class="frame lab__portrait"><img src="assets/img/lotus.webp" alt="Illustration: a woman in a dark green saree holds a pink lotus close, lost in thought." width="736" height="1041" loading="lazy"></figure>
+          <figure class="frame lab__portrait" data-tilt="6" data-reveal><img src="assets/img/lotus.webp" alt="Illustration: a woman in a dark green saree holds a pink lotus close, lost in thought." width="736" height="1041" loading="lazy"></figure>
 
-          <fieldset class="lcard lcard--relate" data-lab="relate">
+          <fieldset class="lcard lcard--relate" data-reveal data-tilt="4" data-lab="relate">
             <legend class="lcard__title"><span class="lcard__n">01</span>How you relate</legend>
             <p class="lcard__q">When things get hard, you reach for…</p>
             <div class="seg">
@@ -193,7 +201,7 @@
             </div>
           </fieldset>
 
-          <fieldset class="lcard lcard--value" data-lab="value">
+          <fieldset class="lcard lcard--value" data-reveal data-tilt="4" data-lab="value">
             <legend class="lcard__title"><span class="lcard__n">02</span>What you value</legend>
             <p class="lcard__q">Pick up to three.</p>
             <div class="tags">
@@ -206,14 +214,14 @@
             </div>
           </fieldset>
 
-          <div class="lcard lcard--life" role="group" aria-labelledby="life-title" data-lab="life">
+          <div class="lcard lcard--life" data-reveal data-tilt="4" role="group" aria-labelledby="life-title" data-lab="life">
             <p class="lcard__title" id="life-title"><span class="lcard__n">03</span>The life you want</p>
             <div class="toggle-row"><span id="t-family">Living close to family</span><button class="toggle" type="button" role="switch" aria-checked="false" aria-labelledby="t-family" data-life="family"><i></i></button></div>
             <div class="toggle-row"><span id="t-quiet">Quiet weekends</span><button class="toggle" type="button" role="switch" aria-checked="false" aria-labelledby="t-quiet" data-life="quiet"><i></i></button></div>
             <div class="toggle-row"><span id="t-routine">A steady routine</span><button class="toggle" type="button" role="switch" aria-checked="false" aria-labelledby="t-routine" data-life="routine"><i></i></button></div>
           </div>
 
-          <div class="lcard lcard--note">
+          <div class="lcard lcard--note" data-reveal data-tilt="4">
             <p class="lcard__title">Your sketch</p>
             <p class="lcard__body" data-sketch aria-live="polite">Answer a prompt and a first sketch of you appears here.</p>
             <p class="lcard__fine">A sketch, not a score.</p>
@@ -244,8 +252,8 @@
 
         <ol class="steps">
           <li class="step" data-reveal>
-            <div class="mock" aria-hidden="true">
-              <p class="mock__kicker">Guided questionnaire</p>
+            <div class="mock" data-tilt="10" aria-hidden="true">
+              <p class="mock__kicker" data-cycle>Guided questionnaire</p>
               <span class="mock__bar"><i style="width:58%"></i></span>
               <p class="mock__q">How do you handle a difficult conversation?</p>
               <span class="mock__opt">Talk it out right away</span>
@@ -257,7 +265,7 @@
             <p>Through an in-depth guided questionnaire, you get clarity on your choices, patterns and what matters to you in a partner.</p>
           </li>
           <li class="step" data-reveal>
-            <div class="mock" aria-hidden="true">
+            <div class="mock" data-tilt="10" aria-hidden="true">
               <p class="mock__kicker">Your introduction</p>
               <span class="face mock__portrait" style="--pos:60% 80%;--z:1.9"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span>
               <p class="mock__sub">Hand-picked for you, one at a time</p>
@@ -270,7 +278,7 @@
             <p>Using psychological compatibility and lifestyle alignment, we hand-pick one person for you and introduce you.</p>
           </li>
           <li class="step" data-reveal>
-            <div class="mock" aria-hidden="true">
+            <div class="mock" data-tilt="10" aria-hidden="true">
               <p class="mock__kicker">Both said yes</p>
               <div class="mock__pair">
                 <span class="face" style="--pos:57% 30%;--z:2.1"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
@@ -286,7 +294,7 @@
             <p>You see a preview of their profile first. If you both say yes, we help you move it to a real conversation and give it a fair shot.</p>
           </li>
           <li class="step" data-reveal>
-            <div class="mock" aria-hidden="true">
+            <div class="mock" data-tilt="10" aria-hidden="true">
               <p class="mock__kicker">How did it feel?</p>
               <span class="mock__bubble">It didn’t quite click. It felt a little rushed.</span>
               <span class="mock__bubble mock__bubble--us">Thank you for telling us. Want to talk it through?</span>
@@ -327,7 +335,7 @@
           <p class="lede" data-reveal>Six rules shape every introduction, so the person in front of you is real, considered, and there for the same reason you are.</p>
         </header>
         <ul class="bento">
-          <li class="tile tile--wide" data-reveal>
+          <li class="tile tile--wide" data-reveal data-tilt="5">
             <div class="tile__viz" aria-hidden="true">
               <span class="ui-row"><span class="ui-ic"><svg><use href="#i-user"/></svg></span>ID verification<span class="toggle is-on" data-auto-toggle><i></i></span></span>
               <span class="ui-chip ui-chip--ok"><svg><use href="#i-check"/></svg>Verified member</span>
@@ -335,31 +343,31 @@
             <h3>Every member is ID verified.</h3>
             <p>Anyone can make a profile on a swipe app. Here, every member is ID verified.</p>
           </li>
-          <li class="tile" data-reveal>
+          <li class="tile" data-reveal data-tilt="5">
             <div class="tile__viz" aria-hidden="true">
-              <span class="stack"><span class="face is-dim" style="--pos:52% 25%;--z:2.4"><img src="assets/img/saree-moon.webp" alt="" loading="lazy"></span><span class="face is-on" style="--pos:60% 80%;--z:2.4"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span><span class="face is-dim" style="--pos:51% 26%;--z:2"><img src="assets/img/lotus.webp" alt="" loading="lazy"></span></span>
+              <span class="stack" data-stack><span class="face is-dim" style="--pos:52% 25%;--z:2.4"><img src="assets/img/saree-moon.webp" alt="" loading="lazy"></span><span class="face is-on" style="--pos:60% 80%;--z:2.4"><img src="assets/img/what-eyes.webp" alt="" loading="lazy"></span><span class="face is-dim" style="--pos:51% 26%;--z:2"><img src="assets/img/lotus.webp" alt="" loading="lazy"></span></span>
             </div>
             <h3>One introduction at a time.</h3>
             <p>No crowd to compare against and no juggling chats. One person gets your full attention.</p>
           </li>
-          <li class="tile" data-reveal>
+          <li class="tile" data-reveal data-tilt="5">
             <div class="tile__viz" aria-hidden="true"><span class="ui-chip ui-chip--violet">You · Yes</span><span class="ui-chip ui-chip--violet">Them · Yes</span></div>
             <h3>Nothing moves without both of you.</h3>
             <p>You see a preview of their profile first. It only becomes a conversation if you both say yes.</p>
           </li>
-          <li class="tile tile--wide" data-reveal>
+          <li class="tile tile--wide" data-reveal data-tilt="5">
             <div class="tile__viz" aria-hidden="true">
               <span class="ui-voice"><span class="ui-voice__btn"><svg><use href="#i-phone"/></svg></span><span class="wave wave--lg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="ui-voice__t">Call</span></span>
             </div>
             <h3>A no-texting policy.</h3>
             <p>Texting is where conversations lose momentum and fade away. Here, it’s a call first, and video when you’re ready.</p>
           </li>
-          <li class="tile tile--wide" data-reveal>
+          <li class="tile tile--wide" data-reveal data-tilt="5">
             <div class="tile__viz" aria-hidden="true"><span class="ui-chip">Human judgement</span><span class="ui-plus">+</span><span class="ui-chip ui-chip--ghost">AI</span></div>
             <h3>Human judgement in every introduction.</h3>
             <p>Not just AI. Your psychology, attachment patterns, values and lifestyle are considered before anyone is introduced.</p>
           </li>
-          <li class="tile" data-reveal>
+          <li class="tile" data-reveal data-tilt="5">
             <div class="tile__viz" aria-hidden="true"><span class="ui-bubble">Tell us how it felt.</span></div>
             <h3>If it doesn’t click, we listen.</h3>
             <p>Talk it through if you want to. The next introduction is shaped by it.</p>
@@ -373,7 +381,7 @@
     <section class="fit" id="for-you" aria-labelledby="fit-title">
       <div class="wrap fit__grid">
         <figure class="fit__art">
-          <span class="frame"><img src="assets/img/saree-moon.webp" alt="Illustration: a woman in a navy and gold saree and dark sunglasses stands, hands on hips, before a white moon." width="736" height="1307" loading="lazy"></span>
+          <span class="frame" data-tilt="6"><img src="assets/img/saree-moon.webp" alt="Illustration: a woman in a navy and gold saree and dark sunglasses stands, hands on hips, before a white moon." width="736" height="1307" loading="lazy"></span>
           <figcaption class="doodle-cap" aria-hidden="true">
             <svg viewBox="0 0 120 60"><path d="M8 50C30 46 70 30 104 8" fill="none" stroke="#141216" stroke-width="2.2" stroke-linecap="round"/><path d="M90 8l15-1-5 14" fill="none" stroke="#141216" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>date with intention.</span>
@@ -424,9 +432,9 @@
     <!-- ========== 10 · BEGIN (reference 1 ending) ========== -->
     <section class="final" id="begin" aria-labelledby="final-title">
       <div class="floaters" aria-hidden="true">
-        <span class="face floater" style="--x:10%;--y:24%;--s:clamp(56px,6.5vw,96px);--pos:57% 30%;--z:2.1" data-speed="-0.5"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
-        <span class="face floater" style="--x:88%;--y:30%;--s:clamp(50px,5.5vw,84px);--pos:32% 18%;--z:2.6" data-speed="0.6"><img src="assets/img/first-glance-comic.webp" alt="" loading="lazy"></span>
-        <span class="face floater" style="--x:84%;--y:82%;--s:clamp(54px,6vw,92px);--pos:51% 84%;--z:2.6" data-speed="-0.3"><img src="assets/img/first-glance-comic.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:10%;--y:24%;--s:clamp(56px,6.5vw,96px);--pos:57% 30%;--z:2.1" data-speed="-0.5" data-move data-drag data-depth="1.4"><img src="assets/img/violet-flower.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:88%;--y:30%;--s:clamp(50px,5.5vw,84px);--pos:32% 18%;--z:2.6" data-speed="0.6" data-move data-drag data-depth="1.6"><img src="assets/img/first-glance-comic.webp" alt="" loading="lazy"></span>
+        <span class="face floater" style="--x:84%;--y:82%;--s:clamp(54px,6vw,92px);--pos:51% 84%;--z:2.6" data-speed="-0.3" data-move data-drag data-depth="1.1"><img src="assets/img/first-glance-comic.webp" alt="" loading="lazy"></span>
       </div>
       <div class="wrap final__inner">
         <h2 class="final__title" id="final-title" data-reveal>The best time to understand yourself was before your last relationship. <em>The second best time is now.</em></h2>
