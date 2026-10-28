@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TSE — Cast &amp; expression sheet</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Caveat:wght@500..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <style>
+    body { background: var(--paper); padding: 48px var(--gutter) 96px; }
+    h1 { font-size: var(--t-h2); letter-spacing: -0.04em; line-height: 1; margin: 12px 0 8px; }
+    p.lede { margin-bottom: 40px; color: var(--on-paper-muted); }
+    h2 { margin: 56px 0 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 22px; }
+    figure { background: var(--white); border: var(--border); border-radius: 6px; padding: 14px 14px 10px; }
+    figure > div { aspect-ratio: 200 / 240; }
+    figcaption { margin-top: 10px; display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    a.back { font-weight: 650; }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><pattern id="ht" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.25" fill="#1A1418" opacity=".28"/></pattern></defs></svg>
+  <a class="back" href="index.html">← Back to the landing page</a>
+  <p class="tag" style="margin-top:32px">TSE illustration system · v0.1</p>
+  <h1>Cast &amp; expression sheet</h1>
+  <p class="lede">One bust template, one palette, one line weight. Every person on the landing page is drawn from this file — so a new scene never needs a new illustration style.</p>
+
+  <h2 class="tag">Expressions — Tara</h2>
+  <div class="grid" id="moods"></div>
+  <h2 class="tag">Expressions — Kabir</h2>
+  <div class="grid" id="moods-k"></div>
+  <h2 class="tag">The cast</h2>
+  <div class="grid" id="cast"></div>
+
+  <script type="module">
+    import { CAST, MOODS, mountPeople } from './js/cast.js';
+    const fig = (person, mood, label) => `<figure><div data-person="${person}" data-mood="${mood}"></div><figcaption><span>${label}</span><span>${mood}</span></figcaption></figure>`;
+    document.getElementById('moods').innerHTML = Object.keys(MOODS).map((m) => fig('tara', m, 'Tara')).join('');
+    document.getElementById('moods-k').innerHTML = Object.keys(MOODS).map((m) => fig('kabir', m, 'Kabir')).join('');
+    document.getElementById('cast').innerHTML = Object.keys(CAST).map((k) => fig(k, 'happy', k)).join('');
+    mountPeople();
+  </script>
+</body>
+</html>

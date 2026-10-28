@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tse",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["tools/dev-server.py", "4173"],
+      "port": 4173
+    }
+  ]
+}
